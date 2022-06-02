@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as dayjs from 'dayjs';
-import { Wrapper } from '@googlemaps/react-wrapper';
+import * as React from "react";
+import * as dayjs from "dayjs";
+import { Wrapper } from "@googlemaps/react-wrapper";
 import {
   Button,
   Center,
@@ -10,14 +10,14 @@ import {
   Loader,
   SimpleGrid,
   NumberInput,
-} from '@mantine/core';
-import { useForm } from '@mantine/form';
-import { DatePicker } from '@mantine/dates';
+} from "@mantine/core";
+import { useForm } from "@mantine/form";
+import { DatePicker } from "@mantine/dates";
 
-import { render, Map, Marker, Hotel } from './components';
-import { fetchHotels } from './api/hotels';
-import { ApiResponse } from './types/response';
-import { ScatterData, Scatter } from './components/Scatterplot/Scatter';
+import { render, Map, Marker, Hotel } from "./components";
+import { fetchHotels } from "./api/hotels";
+import { ApiResponse } from "./types/response";
+import { ScatterData, Scatter } from "./components/Scatterplot/Scatter";
 
 const App: React.FC = () => {
   // Map
@@ -42,14 +42,14 @@ const App: React.FC = () => {
     initialValues: {
       adults_number: 2,
       checkin_date: new Date(),
-      checkout_date: dayjs(new Date()).add(1, 'day').toDate(),
+      checkout_date: dayjs(new Date()).add(1, "day").toDate(),
     },
 
     validate: {
       checkin_date: (value, values) =>
         dayjs(values.checkout_date).isAfter(dayjs(value))
           ? null
-          : 'Data zameldowania musi być wcześniej od wymeldowania',
+          : "Data zameldowania musi być wcześniej od wymeldowania",
     },
   });
 
@@ -79,7 +79,7 @@ const App: React.FC = () => {
 
   // JSX
   return (
-    <div style={{ display: 'flex', height: '100%' }}>
+    <div style={{ display: "flex", height: "100%" }}>
       <Wrapper
         apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY!}
         render={render}
@@ -89,17 +89,17 @@ const App: React.FC = () => {
           onClick={onClick}
           onIdle={onIdle}
           zoom={zoom}
-          style={{ flexGrow: '1', height: '100%' }}
+          style={{ flexGrow: "1", height: "100%" }}
         >
           <Marker position={location} />
         </Map>
       </Wrapper>
       <div
         style={{
-          padding: '1rem',
-          flexBasis: '50%',
-          height: '100%',
-          overflow: 'auto',
+          padding: "1rem",
+          flexBasis: "50%",
+          height: "100%",
+          overflow: "auto",
         }}
       >
         <form onSubmit={form.onSubmit((values) => handleFetchHotels(values))}>
@@ -112,16 +112,16 @@ const App: React.FC = () => {
               <NumberInput
                 label="Liczba dorosłych"
                 min={0}
-                {...form.getInputProps('adults_number')}
+                {...form.getInputProps("adults_number")}
                 required
               />
               <DatePicker
                 label="Data zameldowania"
-                {...form.getInputProps('checkin_date')}
+                {...form.getInputProps("checkin_date")}
               />
               <DatePicker
                 label="Data wymeldowania"
-                {...form.getInputProps('checkout_date')}
+                {...form.getInputProps("checkout_date")}
               />
             </SimpleGrid>
             {location && (

@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { scaleLinear } from 'd3-scale';
-import { extent } from 'd3-array';
-import AxisLeft from './AxisLeft';
-import AxisBottom from './AxisBottom';
+import * as React from "react";
+import { scaleLinear } from "d3-scale";
+import { extent } from "d3-array";
+import AxisLeft from "./AxisLeft";
+import AxisBottom from "./AxisBottom";
 
-import { Circle } from './Circle';
+import { Circle } from "./Circle";
 
 export interface ScatterData {
   x: number;

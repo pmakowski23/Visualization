@@ -1,6 +1,6 @@
-import { useHover } from '@mantine/hooks';
-import { RefObject } from 'react';
-import * as React from 'react';
+import { useHover } from "@mantine/hooks";
+import { RefObject } from "react";
+import * as React from "react";
 
 export const Circle = ({ i, r, d, fill, xScale, yScale, setActive }) => {
   const { hovered, ref } = useHover();
@@ -13,7 +13,7 @@ export const Circle = ({ i, r, d, fill, xScale, yScale, setActive }) => {
       r={r}
       cx={xScale(d.x)}
       cy={yScale(d.y)}
-      style={{ fill, cursor: hovered ? 'pointer' : undefined }}
+      style={{ fill, cursor: hovered ? "pointer" : undefined }}
     />
   );
 };

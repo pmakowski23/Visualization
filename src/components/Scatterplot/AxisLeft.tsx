@@ -1,16 +1,16 @@
-import * as React from 'react';
+import * as React from "react";
 
 function AxisLeft({ yScale, width }) {
   const axis = yScale.ticks(5).map((d, i) => (
     <g key={i} className="y-tick">
       <line
-        style={{ stroke: '#e4e5eb' }}
+        style={{ stroke: "#e4e5eb" }}
         y1={yScale(d)}
         y2={yScale(d)}
         x2={width}
       />
       <text
-        style={{ fontSize: 12, fill: 'white' }}
+        style={{ fontSize: 12, fill: "white" }}
         x={-20}
         dy=".32em"
         y={yScale(d)}
@@ -19,7 +19,11 @@ function AxisLeft({ yScale, width }) {
       </text>
       {i === 1 && (
         <text
-          style={{ fontSize: 12, fill: 'white', transform: 'rotate(270deg) translate(-200px, -324px)' }}
+          style={{
+            fontSize: 12,
+            fill: "white",
+            transform: "rotate(270deg) translate(-250px, -350px)",
+          }}
           x={-60}
           dy=".32em"
           y={yScale(d)}

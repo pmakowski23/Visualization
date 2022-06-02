@@ -1,9 +1,9 @@
-import { Button, Group, Text, Card, Badge } from '@mantine/core';
-import * as React from 'react';
+import { Group, Text, Card, Badge } from "@mantine/core";
+import * as React from "react";
 
 export const Hotel = ({ price, address, name, distance, review, currency }) => {
   return (
-    <div style={{ width: 340, margin: 'auto' }}>
+    <div style={{ width: 340, margin: "auto" }}>
       <Card shadow="sm" p="lg">
         <Group
           position="apart"
