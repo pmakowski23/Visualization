@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import {
   Button,
