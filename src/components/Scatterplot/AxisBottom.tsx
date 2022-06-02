@@ -20,14 +20,14 @@ function AxisBottom({ xScale, height }) {
       >
         {d}
       </text>
-      {i === 5 && (
+      {i === 4 && (
         <text
           style={{ textAnchor: "middle", fontSize: 14, fill: "white" }}
           dy=".71em"
           x={xScale(d)}
           y={height + 3 * textPadding}
         >
-          Cena
+          Cena (zł)
         </text>
       )}
     </g>

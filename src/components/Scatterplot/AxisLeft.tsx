@@ -1,7 +1,8 @@
 import * as React from "react";
 
 function AxisLeft({ yScale, width }) {
-  const axis = yScale.ticks(5).map((d, i) => (
+  const scale = yScale.ticks(5);
+  const axis = scale.map((d, i) => (
     <g key={i} className="y-tick">
       <line
         style={{ stroke: "#e4e5eb" }}
@@ -17,20 +18,6 @@ function AxisLeft({ yScale, width }) {
       >
         {d}
       </text>
-      {i === 1 && (
-        <text
-          style={{
-            fontSize: 12,
-            fill: "white",
-            transform: "rotate(270deg) translate(-250px, -350px)",
-          }}
-          x={-60}
-          dy=".32em"
-          y={yScale(d)}
-        >
-          Odległość (km)
-        </text>
-      )}
     </g>
   ));
   return <>{axis}</>;

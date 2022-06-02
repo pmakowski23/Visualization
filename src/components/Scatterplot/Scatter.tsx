@@ -57,6 +57,19 @@ export const Scatter: React.FC<Props> = ({ r, fill, data, setActiveHotel }) => {
   return (
     <div>
       <svg width={w} height={h}>
+        <text
+          style={{
+            fontSize: 14,
+            fill: "white",
+            transformOrigin: "left",
+            transform: "rotate(270deg) translate(5px, 55px)",
+          }}
+          x={-40}
+          dy=".32em"
+          y={height / 2 - 10}
+        >
+          Odległość (km)
+        </text>
         <g transform={`translate(${margin.left},${margin.top})`}>
           <AxisLeft yScale={yScale} width={width} />
           <AxisBottom xScale={xScale} height={height} />
