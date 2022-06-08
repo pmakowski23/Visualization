@@ -1,12 +1,18 @@
-import * as React from "react";
+import React, { FC } from "react";
+import { ScaleLinear } from "d3";
 
-function AxisBottom({ xScale, height }) {
+interface Props {
+  xScale: ScaleLinear<number, number, never>;
+  height: number;
+}
+
+const AxisBottom: FC<Props> = ({ xScale, height }) => {
   const textPadding = 10;
 
   const axis = xScale.ticks(10).map((d, i) => (
     <g className="x-tick" key={i}>
       <line
-        style={{ stroke: "#e4e5eb" }}
+        style={{ stroke: "grey" }}
         y1={0}
         y2={height}
         x1={xScale(d)}
@@ -33,6 +39,6 @@ function AxisBottom({ xScale, height }) {
     </g>
   ));
   return <>{axis}</>;
-}
+};
 
 export default AxisBottom;

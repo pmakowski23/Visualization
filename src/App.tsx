@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import dayjs from "dayjs";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import {
@@ -64,6 +64,7 @@ const App: React.FC = () => {
       const data = hotels.map((hotel) => ({
         x: hotel.min_total_price,
         y: hotel.distance,
+        hotelName: hotel.hotel_name_trans,
       }));
 
       setScatterData(data);

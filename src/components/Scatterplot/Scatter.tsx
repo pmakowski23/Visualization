@@ -1,6 +1,7 @@
-import * as React from "react";
+import React from "react";
 import { scaleLinear } from "d3-scale";
 import { extent } from "d3-array";
+
 import AxisLeft from "./AxisLeft";
 import AxisBottom from "./AxisBottom";
 
@@ -9,6 +10,7 @@ import { Circle } from "./Circle";
 export interface ScatterData {
   x: number;
   y: number;
+  hotelName: string;
 }
 
 interface Props {
@@ -74,6 +76,8 @@ export const Scatter: React.FC<Props> = ({ r, fill, data, setActiveHotel }) => {
           <AxisLeft yScale={yScale} width={width} />
           <AxisBottom xScale={xScale} height={height} />
           {circles}
+          {/* Make sure that tooltip is always on top */}
+          <use xlinkHref="#tooltip" />
         </g>
       </svg>
     </div>

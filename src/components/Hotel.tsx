@@ -1,5 +1,5 @@
+import React from "react";
 import { Group, Text, Card, Badge } from "@mantine/core";
-import * as React from "react";
 
 export const Hotel = ({ price, address, name, distance, review, currency }) => {
   return (

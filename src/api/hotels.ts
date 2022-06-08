@@ -1,23 +1,23 @@
 import dayjs from "dayjs";
 import { ApiResponse } from "../types/response";
 
-import axios from "axios";
-export const fetchHotels = async (location: google.maps.LatLng, params) => {
-  const { checkin_date, checkout_date, adults_number } = params;
-  const parsedParams = {
-    checkin_date: dayjs(checkin_date).format("YYYY-MM-DD"),
-    checkout_date: dayjs(checkout_date).format("YYYY-MM-DD"),
-    adults_number,
-  };
-  const response = await axios.request(options(location, parsedParams));
-  return response.data.result as ApiResponse[];
-};
-
-// import { exampleResponse } from './exampleResponse';
+// import axios from "axios";
 // export const fetchHotels = async (location: google.maps.LatLng, params) => {
-//   const response = await Promise.resolve(exampleResponse);
-//   return response.data.result as any as ApiResponse[];
+//   const { checkin_date, checkout_date, adults_number } = params;
+//   const parsedParams = {
+//     checkin_date: dayjs(checkin_date).format("YYYY-MM-DD"),
+//     checkout_date: dayjs(checkout_date).format("YYYY-MM-DD"),
+//     adults_number,
+//   };
+//   const response = await axios.request(options(location, parsedParams));
+//   return response.data.result as ApiResponse[];
 // };
+
+import { exampleResponse } from "./exampleResponse";
+export const fetchHotels = async (location: google.maps.LatLng, params) => {
+  const response = await Promise.resolve(exampleResponse);
+  return response.data.result as any as ApiResponse[];
+};
 
 const today = dayjs().format("YYYY-MM-DD");
 
