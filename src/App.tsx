@@ -143,7 +143,11 @@ const App: React.FC = () => {
           </Center>
         </form>
 
-        {activeHotel && hotels && (
+        {hotels && hotels.length === 0 && (
+          <Text size="xl">Nie znaleziono hoteli</Text>
+        )}
+
+        {activeHotel && hotels && hotels.length > 0 && (
           <Hotel
             price={hotels[activeHotel].min_total_price}
             address={hotels[activeHotel].address}

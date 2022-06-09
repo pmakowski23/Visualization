@@ -13,12 +13,6 @@ export const fetchHotels = async (location: google.maps.LatLng, params) => {
   return response.data.result as ApiResponse[];
 };
 
-// import { exampleResponse } from "./exampleResponse";
-// export const fetchHotels = async (location: google.maps.LatLng, params) => {
-//   const response = await Promise.resolve(exampleResponse);
-//   return response.data.result as any as ApiResponse[];
-// };
-
 const today = dayjs().format("YYYY-MM-DD");
 
 const twoDaysFromToday = dayjs().add(2, "days").format("YYYY-MM-DD");
