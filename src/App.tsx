@@ -103,7 +103,12 @@ const App: React.FC = () => {
           overflow: "auto",
         }}
       >
-        <form onSubmit={form.onSubmit((values) => handleFetchHotels(values))}>
+        <form
+          onSubmit={form.onSubmit((values) => {
+            setActiveHotel(undefined);
+            handleFetchHotels(values);
+          })}
+        >
           <Stack
             align="center"
             sx={(theme) => ({ marginBottom: theme.spacing.md })}
